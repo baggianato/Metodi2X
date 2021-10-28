@@ -1,0 +1,78 @@
+\subsection*{Funzione di Green}
+\[
+    b(t)=\int_{-\infty}^{+\infty}G(t,t')a(t')\,dt'
+\]
+dove $G(t,t')$ è la \textit{funzione di Green}, $b(t)=L[a(t)]$ la funzione di \textit{output} e $a(t)$ quella di \textit{input}.
+\subsubsection*{Sistemi lineari e indipendenti dal tempo}
+La relazione tra input e output in sistemi lineari indipendenti dal tempo è
+\[
+    b(t)\equiv(G*a)(t)\equiv\int_{-\infty}^{+\infty}G(t-t')a(t')\,dt' = \int_{-\infty}^{+\infty}G(\tau')a(t-\tau)\,dt'
+\]
+L'analisi in frequenza restituisce
+\[
+    \Tilde{b}(\w) = \Tilde{G}(\w)\Tilde{a}(\w)
+\]
+Possiamo interpretare la funzione di Green come la risposta (output) ad un input pari alla $\delta(t)$:
+\[
+    G(t) = L[\delta(t)]\quad (\text{cioè: }a(t)=\delta(t) \Rightarrow b(t) = G(t)).
+\]  
+\subsubsection*{Sistemi lineari causali}
+La funzione di Green $G(t,t')$ è causale se $b(t)$ non è influenzato da $a(t')$ per tempi $t'>t$ ma soltanto per tempi $t'<t$:
+\begin{equation}
+    G(t,t')=0 \text{ per }t'>t.
+    \label{condizionecausalita}
+\end{equation}
+Per tale sistema si ha
+\[
+    b(t) = \int_{-\infty}^{t}G(t,t')a(t')\, dt'
+\]
+Se il sistema è indipendente dal tempo l'eq. (\ref{condizionecausalita}) diventa
+\[
+    G(t-t')=0\text{ per }t'>t,\text{ i.e. }G(\tau)=0\text{ per }\tau<0.
+\]
+e la relazione input-output diventa
+\begin{align*}
+        b(t) &= \int_{-\infty}^{t}G(t-t')a(t')\, dt'=  \\
+        &=\int_{0}^{+\infty}G(\tau)a(t-\tau)\,d\tau.
+\end{align*}
+\begin{theorem}
+    Sia $G(t)$ funzione di Green causale e a quadrato sommabile ($G(t)\in L^2(0,\,+\infty$). Allora la sua trasformata di Fourier
+    \[
+        \chi(\w)\defeq\Tilde{G}(\w)=\int_{0}^{+\infty}e^{i\w t}G(t)\,dt,
+    \]
+    vista come funzione di $\w \in \mathbb{C}$, è una funzione analitica nel semipiano complesso superiore $\pim( \w) > 0$.
+\end{theorem}
+\begin{theorem}
+    Se $G(t)$ è a supporto compatto e sommabile, allora 
+    \[
+        \four(G(t)) = \int_{-\infty}^{+\infty}e^{i\w t}G(t)\,dt = \int_{\mathcal{I}} e^{i\w t}G(t)\,dt,
+    \]
+    con $\mathcal{I}$ supporto compatto di $G(t)$, come funzione di $\w \in \mathbb{C}$ è una funzione analitica $\forall\w\in\mathcal{C}$ (intera).
+\end{theorem}
+\subsubsection*{Relazioni di dispersione}
+In forma compatta
+\[
+    \mathcal{P}\int_{-\infty}^{+\infty}\frac{\chi'(\nu)+i\chi''(\nu)}{\nu-\w}\,d\nu=i\pi[\chi'(\w)+i\chi''(\w)];
+\]
+Forma esplicita
+\begin{gather*}
+    \chi'(\w) = \frac{1}{\pi}\mathcal{P}\int_{-\infty}^{+\infty}\frac{\chi''(\nu)}{\nu-\w}\,d\nu;\\
+    \chi'(\w) = -\frac{1}{\pi}\mathcal{P}\int_{-\infty}^{+\infty}\frac{\chi'(\nu)}{\nu-\w}\,d\nu.
+\end{gather*}
+Si dice che $\chi'{\w}$ e $\chi''(\w)$ sono le \textbf{trasformate di Hilbert} l'una dell'altra.
+\begin{theorem}[di Titchmarsch]
+    Dato un sistema lineare e indipendente dal tempo, con funzione di green $G(t)$, le seguenti proprietà risultano equivalenti:
+    \begin{enumerate}[label=(\roman*)]
+        \item $G(t)=0$ per $t<0$ e $G(t)\in L^2(0,\,+\infty)$ per cui ammette $\chi(\w)=\Tilde{G}(\w)\in L^2(\mathbb{R})$;
+        \item $\chi(\w')\equiv\Tilde{G}(\w') $, con $\w'\in\mathbb{R}$, è $\chi(\w')\in L^2(\mathcal{R})$ ed è il limite per $\w''\equiv\pim(\w)\to0^+$ di una funzione $\chi(\w=\w'+i\w'')$ analitica nel semipiano complesso superiore $\pim(\w)\equiv\w''>0$, e tale per cui esiste finito il
+        \[
+            \sup_{\w''>0}\int_{-\infty}^{+\infty}|\chi(\w'+i\w'')|^2\,d\w'<+\infty;
+        \]
+        \item Le funzioni $\chi'(\w)\equiv\pre(\chi(\w))$ e $\chi''(\w)\equiv\pim(\chi(\w))$ con $\w\in\mathbb{R}$, sono le trasformate di Hilbert l'una dell'altra, e, inoltre sono a quadrato sommabile ($\chi'(\w), \chi''(\w)\in L^2(\mathbb{R})$).
+    \end{enumerate}
+\end{theorem}
+Un'ulteriore forma per le relazioni di dispersione è quella ricavata originariamente da \textbf{Kramers e Krönig}
+\begin{gather*}
+    \chi'(\w) = \frac{2}{\pi}\mathcal{P}\int_{0}^{+\infty}\frac{\nu}{\nu^2-\w^2}\chi''(\nu)\,d\nu;\\
+    \chi'(\w) = -\frac{2}{\pi}\mathcal{P}\int_{0}^{+\infty}\frac{\w}{\nu^2-\w^2}\chi'(\nu)\,d\nu.
+\end{gather*}

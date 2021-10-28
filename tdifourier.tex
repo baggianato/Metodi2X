@@ -1,0 +1,31 @@
+\subsection*{Trasformata di Fourier}
+
+\begin{definition}[Trasformata di Fourier]
+ \[
+    \mathcal{F}(f(t))=\int_{-\infty}^{+\infty}f(t)e^{i\omega t}dt = \Tilde{f}(\omega)
+ \]
+ \[
+    \Rightarrow f(t) = \frac{1}{2\pi} \int_{-\infty}^{+\infty}f(t)e^{-i\omega t}d\omega\text{ (antitrasformata)}
+ \]
+\end{definition}
+ Alcune proprietà:
+ \begin{enumerate}
+     \item Teoremi di traslazione:
+     \begin{enumerate}
+         \item $\mathcal{F}(f(t-a))=e^{i\omega a}\mathcal{F}(f(t))$, $\forall a\in \mathbf{R}$;
+         \item $\mathcal{F}(e^{-iat}f(t))=\Tilde{f}(\omega-a)$, $\forall a\in \mathbf{R}$.
+     \end{enumerate}
+     \item Teoremi sulla derivazione:
+     \begin{enumerate}
+         \item $\four (\frac{d^kf(t)}{dt^k}=(-i\w)^k \four(f(t))$, $k=1,2,\dots$;
+         \item $\four((ut)^kf(t)) = \frac{d^kf(t)}{dt^k}\Tilde{f}(\w)$, $k=1,2,\dots$
+     \end{enumerate}
+     \item Teorema di Riemann - Lebesgue:
+     \[
+        \lim_{\w\to\pm\infty}\Tilde f(\w) =0.di
+     \]
+     \item Teorema sulla convoluzione:
+     \[
+        \four(f_1*f_2)=\Tilde{f_1}(\w)\Tilde{f_2}(\w).
+     \]
+ \end{enumerate}

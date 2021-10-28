@@ -1,0 +1,98 @@
+\subsubsection*{Integrale complesso}
+\begin{gather*}
+    \int_\mathbb{C} f(z)\, dz = \int_\mathbb{C} \{u(x,y)\,dx-v(x,y)\,dy\} +\\+ i\int_\mathbb{C}\{v(x,y)\,dx + u(x,y)\,dy\};\\
+    \Big|\int_\mathbb{C} f(z) \,dz\Big| \le \int_\mathbb{C} |f(z)| \,ds, \ ds=|dz|;
+\end{gather*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}[di Darboux]
+        Se $\displaystyle \max_{z\in\mathbf{C}}|f(z)| = M$ e $L=\int_\mathbb{C} ds \Rightarrow \Big|\int_\mathbb{C} f(z) dz\Big| \le M\cdot L$.
+    \end{lemma}
+
+    \begin{fdg}
+        \[
+            \int_\mathbb{C} Adx+Bdy=\iint_\mathcal{G}\Big\{\frac{\partial B}{\partial x}-\frac{\partial A}{\partial y}\Big\}dxdy,
+        \]
+        con $A(x,y)$ e $B(x,y)$ continue in $\overline{\mathcal{G}}$ chiuso e limitato da un contorno regolare a tratti con derivate prime continue in $\mathcal{G}$.
+    \end{fdg}
+    
+    \begin{fdvm}
+        \[
+            f(z_0) = \frac{1}{2\pi}\int_0^{2\pi}f(z_0+Re^{i\theta})d\theta    
+        \]
+    \end{fdvm}
+    
+    \begin{pdmm}
+        Sia $f(z)$ analitica in $\mathcal{G}$ e continua in $\overline{\mathcal{G}}$ chiuso $\Rightarrow$ $|f(z)|=$costante o $|f(z)|$ assume il suo massimo sulla frontiera.
+    \end{pdmm}
+    
+    \begin{theorem}[di Liouville]
+        Sia $f(z)$ intera (analitica su tutto $\mathbf{C}$) e sia $|f(z)|$ uniformamente limitato, cioé $\exists\ M>0:|f(z)|\le M,\ \forall z\in \mathbf{C}$. \\
+        Allora $f(z)\equiv$costante.
+    \end{theorem}
+
+
+\begin{theorem}[di Cauchy (v1.1)]
+\label{cauchy1v1}
+    Sia $f(z)$ analitica in $\mathcal{G}$ semplicemente connesso (SC). Allora
+    \begin{gather*}
+        \oint_\Gamma f(z)dz = 0, \\ \forall\  \Gamma \text{ contorno chiuso completamente contenuto in }\mathcal{G}
+    \end{gather*}
+\end{theorem}
+\begin{theorem}[di Cauchy (v1.2)]
+\label{cauchy1v2}
+    Sia $f(z)$ analitica in $\mathcal{G}$ semplicemente connesso, limitato da un contorno regolare a tratti $C$, e sia continua in $\overline{\mathcal{G}}$ chiuso . Allora
+    \[
+        \oint_{\Gamma=\partial\mathcal{G}} f(z)dz = 0
+    \]
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[di Cauchy (v1.3)]
+\label{cauchy1v3}
+    Sia $f(z)$ analitica in $\mathcal{G}$ a connessione multipla, limitato esternamente dal contorno $C_0$ e internamente dai contorni $C_1, C_2, \dots, C_n$ e sia $f(z)$ continua in $\overline{\mathcal{G}}$ chiuso. Allora, detta $C$ la frontiera formata dall'unione di $C_0^+\text{ e } C_1^-, C_2^-, \dots, C_n^-$, si ha
+    \[
+        \oint_{C=\partial\mathcal{G}} f(z)dz = \oint_{C_0^+} f(z)dz + \oint_{C_1^-} f(z)dz +\dots + \oint_{C_n^-} f(z)dz =0
+    \]
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[di Cauchy (v2.1)]
+    \label{cauchy2v1}
+    Sia $f(z)$ analitica in $\mathcal{G}$ semplicemente connesso, limitato da un contorno regolare a tratti $C$. Fissato $z_0\in\mathcal{G}$ arbitrario e $\Gamma$ contorno chiuso completamente contenuto in $\mathcal{G}$ e contenente $z_0$ come punto interno, si ha
+    \[
+        f(z_0) = \frac{1}{2\pi i} \oint_{\Gamma^+}\frac{f(z)}{z-z_0}dz \text{  (Formula di Cauchy)}.
+    \]
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[di Cauchy (v2.2)]
+    Ipotesi del \textbf{Teorema di Cauchy} (v2.1) più $f(z)$ continua in $\overline{\mathcal{G}}$, risulta 
+    \[
+        f(z_0) = \frac{1}{2\pi i} \oint_{C=\partial\mathcal{G}^+}\frac{f(z)}{z-z_0}dz.
+    \]
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[di Cauchy (v2.3)]
+    Ipotesi del \textbf{Teorema di Cauchy} (v2.2) più $\mathcal{G}$ a connessione multipla, si ha
+    \[
+        f(z_0) = \frac{1}{2\pi i} \oint_{C=\partial\mathcal{G}^+}\frac{f(z)}{z-z_0}dz.
+    \]
+    Intendendo $C=\partial\mathcal{G}$ come la frontiera totale del dominio (come \textbf{Teorema di Cauchy} (v1.3)).
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ddfa}
+    Sia $f(z)$ analitica in $\mathcal{G}$ e continua in $\overline{\mathcal{G}}$ chiuso. Allora, $\forall\ z\in\mathcal{G}$, $\exists$ derivata di ordine qualsiasi di $f(z)$ e vale
+    \[
+        f^{(k)}(z) = \frac{k!}{2\pi i}\oint_{\Gamma=\partial\mathcal{G}}\frac{f)(\eta)}{(\eta-z)^{k+1}}d\eta
+    \]
+    Esempio nel calcolo di integrali:
+    \[
+        \oint_{\Gamma}\frac{\sin z}{z^3} = \frac{2\pi i}{2!}\left[\frac{d^2}{dz^2}\sin z \right]_{z=0} = 0
+    \]
+\end{ddfa}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[di Morera]
+    Sia $f(z)$ continua in $\mathcal{G} \subset C$ e valga 
+    \[
+        \oint_\Gamma f(\eta)d\eta = 0, \ \forall \ \Gamma\subset\mathcal{G}.
+    \]
+    $\Rightarrow$ $f(z)$ è analitica in $\mathcal{G}$. (inverso di Cauchy v1.1)
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

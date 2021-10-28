@@ -1,0 +1,54 @@
+\subsection*{Serie}
+\subsubsection*{Sviluppi in serie di Taylor-Laurent}
+\begin{theorem}
+    Sia $f(z)$ analitica in $A$ e $z_0$ un punto qualsiasi: allora in ogni corona $C$ aperta, di centro $z_0$, interamente contenuta in $A$, la $f(z)$ può essere sviluppata in una serie di potenze (bilatera):
+    \[
+        f(z) = \sum_{-\infty}^{+\infty}a_n(z-z_0)^n,\  z\in\mathbb{C}.
+    \]
+    In particolare, se $z_0\in A$, allora nel più grande cerchio aperto $C_0$ centrato in $z_0$, la $f(z)$ può essere sviluppata in una serie "puramente di Taylor":
+    \[
+        f(z) = \sum_{0}^{+\infty}a_n(z-z_0)^n,\  z\in\mathbb{C}.
+    \]
+\end{theorem}
+I coefficienti dellos viluppo di Taylor-Laurent sono dati da:
+\[
+    a_n=\frac{1}{2\pi i}\oint_{\Gamma}\frac{f(z)}{(z-z_0)^{n+1}}dz,\quad n=0,\ \pm1,\ \pm2, \dots
+\]
+dove $\Gamma$ è una curva chiusa contenente $z_0$ e contenuta in $\mathbb{C}$.
+\subsubsection*{Proprietà delle serie uniformemente convergenti}
+\begin{theorem}
+    Se le funzioni $u_n(z)$ sono continue in un dominio $G$ e la serie $\displaystyle \sum_{n=0}^\infty u_n(z)$ converge uniformemente in $G$ alla funzione $f(z)$, allora anche $f(z)$ è continua.
+\end{theorem}
+\begin{theorem}
+    Se la serie $\displaystyle \sum_{n=0}^\infty u_n(z)$ di funzioni continue $u_n(z)$ converge uniformemente in un dominio $G$ alla funzione $f(z)$, allora
+    \[
+        \int_\mathbb{C}f(z)\,dz=\displaystyle \sum_{n=0}^\infty \int_\mathbb{C}u_n(z)\,dz
+    \]
+    $\forall$ curva regolare a tratti $C$ completamente contenuta in $G$.
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[di Weierstrass]
+    Se le funzioni $u_n(z)$ sono analitiche in un dominio $G$ e la serie $\displaystyle \sum_{n=0}^\infty u_n(z)$ converge uniformemente alla funzione $f(z)$ in ogni sottodominio chiuso $\overline{G'}\subset G$, allora:
+    \begin{enumerate}
+        \item $f(z)$ è analitica nel dominio $G$;
+        \item $f^{(l)}(z)=\displaystyle \sum_{n=0}^\infty u_n^{(l)}(z)$;
+        \item la serie $\displaystyle \sum_{n=0}^\infty u_n^{(l)}(z)$ converge uniformemente in ogni sottodominio chiuso $\overline{G'}\subset G$.
+    \end{enumerate}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Serie di potenze}
+Sono serie del tipo
+\[
+    \displaystyle \sum_{n=0}^\infty u_n(z) = \sum_{n=0}^\infty c_n(z-z_0)^n,\text{ con }c_n\in\mathbf{C}
+\]
+Le $u_n(z)=c_n(z-z_0)^n$ sono funzioni intere.\\
+Esempi:\\
+\begin{itemize}
+    \item $\displaystyle \sum_{n=0}^\infty n!(z-z_0)^n$ converge solo nel punto $z=z_0$;
+    \item $\displaystyle \sum_{n=0}^\infty \frac{1}{n!}(z-z_0)^n$ converge assolutamente $\forall\ z\in \mathbf{C}$
+\end{itemize}
+\begin{theorem}[di Abel]
+    Se la serie $\displaystyle \sum_{n=0}^\infty c_n(z-z_0)^n$ converge in un punto $z_1\neq z_0$, allora essa converge assolutamente $\forall z : |z-z_0|<|z_1-z_0|$ e, inoltre, essa converge uniformemente in ogni cerchio $|z-z_0|\le\rho<|z_1-z_0|$
+\end{theorem}

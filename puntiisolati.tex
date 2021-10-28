@@ -1,0 +1,44 @@
+\subsection*{Punti singolari isolati}
+
+\begin{definition}[Punti singolari isolati]
+    Si dice che $z_0$ è un punto singolare isolato di una funzione $f(z)$, se $f(z)$ è analitica in una corona circolare $r=0<|z-z_0|<R$, mentre $z_0$ è un punto singolare della funzione (che può essere non definita in $z_0$).
+\end{definition}
+
+Ci sono tre casi possibili:
+\begin{enumerate}
+    \item \textbf{Punto singolare eliminabile:} se $\exists$ (finito) $\displaystyle\lim_{z\to z_0} f(z) =l$, allora il punto $z_0$ è un punto singolare eliminabile della funzione $f(z)$, ovvero essa ammette per $0<|z-z_0|<R$ uno sviluppo in serie di \textit{Taylor-Laurent} con $c_n=0\ \forall n<0\text{ e } c_0=l$.
+    \item \textbf{Polo di ordine $m$:} $\exists$ (finito) $\displaystyle\lim_{z\to z_0}(z-z_0)^m f(z) =c_{-m}=l\neq0$ per qualche $m>0$, cioé se ha un numero finito di termini nella \textit{parte di Laurent} dello sviluppo ($c_n = 0\ \forall n<-m \text{ e } c_{-m}\neq0,\text{ con }m>0$).
+    Proprietà singolarità polari:
+    \begin{enumerate}
+        \item $z_0$ polo di ordine $n$ di $f(z)$ $\iff \displaystyle\lim_{z\to z_0}(z-z_0)^nf(z)=l\neq0$.
+        \item $z_0$ polo di ordine $n$ di $f(z)$ $\iff$ $z_0$ è uno zero di ordine $n$ di $1/f(z)$.
+        \item $z_0$ polo di $f(z)$ $\iff$ $\displaystyle \lim_{z\to z_0}|f(z)|=+\infty$.
+    \end{enumerate}
+    Se $z_0$ è un polo di ordine $m$ di $f(z)$, allora 
+    $$
+        \text{Res}[f(z), z_0]=\frac{1}{(m-1)!}\lim_{z\to z_0}\frac{d^{m-1}}{dz^{m-1}}[(z-z_0)^m f(z)]
+    $$
+    Nel caso in cui il polo sia del primo ordine, il residuo vale
+    \[
+        \text{Res}[f(z),z_0]=\frac{\phi(z_0)}{\psi'(z_0)}\quad \Big( f(z)=\frac{\phi(z)}{\psi(z)}\Big)
+    \]
+    \item \textbf{Punto singolare essenziale:} se nello sviluppo di \textit{Taylor-Laurent} c'è un numero infinito di termini non nulli nella parte di \textit{Laurent}, allora si dice che il punto $z_0$ è un punto di singolarità essenziale della funzione $f(z)$. In questo caso non esiste il $\displaystyle \lim_{z\to z_0}f(z)$ finito o infinito.
+\end{enumerate}
+
+\subsubsection*{Il punto all'infinito come punto singolare isolato}
+\begin{definition}[Punto all'infinito]
+ Si dice che il punto all'infinito ($z=\infty$) è un punto singolare isolato della funzione analitica $f(z)$ se si può trovare un $r$-intorno del punto $z=\infty$ in cui la funzione è analitica, cioè se per $|z|>r$ non vi sono singolarità (a distanza finita da $z=0$) della funzione $f(z)$.
+ \end{definition}
+ Ci sono tre casi possibili:
+\begin{enumerate}
+    \item \textbf{Punto singolare eliminabile:} se $\exists$ (finito) $\displaystyle\lim_{z\to \infty} f(z) =l$, allora il punto $z=\infty$ è un punto singolare eliminabile della funzione $f(z)$, ovvero essa ammette per $r<|z-z_0|<R=\infty$ uno sviluppo in serie di \textit{Taylor-Laurent} con $c_n=0\ \forall n>0\text{ e } c_0=l$.
+    \item \textbf{Polo di ordine $m$:} $\exists$ (finito) $\displaystyle\lim_{z\to \infty} f(z) =\infty$. L'ordine è dato dallo sviluppo di \textit{Taylor-Laurent}, che risulta, per un polo di ordine $m$:
+    \begin{equation*}
+        f(z)=\sum_{n=-\infty}^{m}=\dots +\frac{c_{-1}}{z}+c_0+c_1z+\dots+c_mz^m
+    \end{equation*}
+    dato che $c_n=0\ \forall n>m\text{ e }c_m\neq0,\text{ con }m>0$.
+    
+    \item \textbf{Punto singolare essenziale:} se nello sviluppo di \textit{Taylor-Laurent} c'è un numero infinito di termini non nulli con potenze positive di $z$, allora si dice che il punto $z=\infty$ è un punto di singolarità essenziale della funzione $f(z)$. In questo caso non esiste il $\displaystyle \lim_{z\to \infty}f(z)$ finito o infinito.
+\end{enumerate}
+ 
+    

@@ -1,0 +1,67 @@
+\subsection*{Integrali coi residui}
+
+\begin{theorem}[interno dei Residui]
+	Se la funzione $f(z)$ è analitica ovunque all'interno di un contorno chiuso $\Gamma$, tranne che in un numero finito $N_{int}$ di \textit{punti singolari isolati} $z_k$, $k=0,1,\dots,N_{int}$, e se $f(z)$ è "regolare" (analitica, o almeno continua) su $\Gamma$, allora:
+    \[
+    	\oint_\Gamma f(z) dz = 2\pi i \sum_{k=1}^{N_{int}} \text{Res}[f(z), z=z_k]
+    \]
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[esterno dei Residui]
+	Se la funzione $f(z)$ è analitica ovunque all'esterno di un contorno chiuso $\Gamma$, tranne che in un numero finito $N_{est}$ di \textit{punti singolari isolati} $\overline{z_l}$, $l=0,1,\dots,N_{est}$, e se $f(z)$ è "regolare" (analitica, o almeno continua) su $\Gamma$, allora:
+    \[
+    	\oint_\Gamma f(z) dz = -2\pi i \sum_{k=1}^{N_{int}} \text{Res}[f(z), z=z_k] -2\pi i\text{Res}[f(z), \infty]
+    \]
+    con $\displaystyle \text{Res}[f(z), \infty]\equiv-\frac{1}{2\pi i}\oint_{C}f(\eta)d\eta$ residuo all'infinito.
+\end{theorem}
+Se $f(z)$ è intera tranne che in un numero finito di punti, si possono applicare entrambi i teoremi dei residui ricavando la relazione
+\[
+    \sum_i\text{Res}[f(z), z_i] + \text{Res}[f(z), \infty] =0.
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}[di Jordan]
+	Se la funzione $f(z)$ è analitica nel semipiano complesso superiore, $\Im z\ge 0$ (oppure nel semipiano complesso inferiore, $\Im z \le 0$), tranne che in un numero finito di punti singolari isolati $z_k$, $k=1,\dots,N$, e se 
+    \[
+        \lim_{R\to\infty}\Big( \max_{z\in C_{R}'}|f(z)|\Big)=0
+    \]
+    essendo $C_{R}'$ la semicirconferenza di raggio $R$ e centro in $z=0$ nel semipiano complesso superiore $C_{R}'=\{z:|z|=R, \Im z\ge0\}$ (oppure nel piano complesso inferiore $C_{R}'=\{z:|z|=R, \Im z\le0\}$), ovvero se $\exists\ \mu(R)$ tale che:
+    \[
+        |f(z)|\le\mu(R)\text{ per }|z|=R,\text{ con }\mu(R)\to0\text{ per }R\to+\infty,
+    \]
+    allora si ha che, prendendo $a\in \mathbf{R}$
+    \[
+        \lim_{R\to+\infty}\int_{C_{R}'=\{z:|z|=R, \Im z\ge0\}}e^{iaz}f(z)dz = 0,\text{ per }a>0
+    \]
+    oppure
+    \[
+        \lim_{R\to+\infty}\int_{C_{R}'=\{z:|z|=R, \Im z\le0\}}e^{iaz}f(z)dz = 0,\text{ per }a<0
+    \]
+\end{lemma}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}
+    Se la funzione $f(x)$, definita $\forall x\in\mathbf{R}$, può essere prolungata analiticamente al semipiano complesso superiore, $\Im z\ge0$ (oppure al semipiano complesso inferiore, $\Im z\le0$), e il suo prolungamento analitico $f(z)$ soddisfa le ipotesi del \textbf{\textit{Lemma di Jordan}} e non ha punti singolari sull'asse reale (cioè, $\Im z_k\neq0$), allora si ha che ($a\in \mathbf{R}$):
+    \[
+        \int_{-\infty}^{+\infty}e^{iax}f(x)dx = 2\pi i \sum_{k=1}^{N} \text{Res}[e^{iax}f(z), z=z_k],\text{ per }a>0,
+    \]
+    oppure:
+    \[
+        \int_{-\infty}^{+\infty}e^{iax}f(x)dx =- 2\pi i \sum_{k=1}^{N} \text{Res}[e^{iax}f(z), z=z_k],\text{ per }a<0,
+    \]
+    essendo $z_k$, $K=1,\dots,N$, i punti singolari della funzione $f(z)$ nel semipiano complesso superiore, cioè $\Im z_k >0$ (oppure nel semipiano complesso inferiore, cioè $\Im z_k<0$).
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[porzione di circonferenza]
+    Se la funzione $f(z)$ ha un \textit{polo di ordine 1} in $z=z_0$, allora, detto $\gamma_r$ un arco di circonferenza di centro $z_0$, raggio $r$ e ampiezza $\alpha$, si ha che:
+    \[
+        \lim_{r\to0^+}\int_{\gamma^+_r}f(z) dz = i\alpha \text{Res}[f(z), z_0]
+    \]
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}[Parte principale di Cauchy (funzioni)]
+    Se $x_0$ è un punto singolare, si definisce
+    \[
+        \mathcal{P}\int_{-\infty}^{+\infty}f(x)dx = \lim_{\substack{R\to+\infty \\ r\to0^+}} \Big\{\int_{-R}^{x_0-r}+\int_{x_0+r}^{R}\Big\}f(x)dx
+    \]    
+\end{definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 

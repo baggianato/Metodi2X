@@ -1,0 +1,114 @@
+\subsection*{Distribuzioni}
+\subsubsection*{Classi di distribuzioni}
+\begin{enumerate}
+    \item \textbf{Distribuzioni su funzioni a supporto compatto:}
+    L'insieme delle funzioni di test è
+    \[
+        \four = C^\infty \equiv \mathcal{E}
+    \]
+    con la seguente nozione di convergenza:
+    \begin{equation*}
+        \varphi_n\xrightarrow[]{\mathcal{E}}0,
+    \end{equation*}
+    Cioè, $\forall n \in \mathbb{N},\ \frac{d^k\varphi}{dx^k}\xrightarrow[n\to\infty]{}0$ unifromemente su ogni $K\subset\mathbb{R}$ compatto. \\
+    L'insieme delle distribuzioni $\mathcal{E}$ si indica con $\mathcal{E}'$.
+    \item \textbf{Distribuzioni temperate:}
+    L'insieme delle funzioni test è
+    \[
+        \four = \Big\{ \varphi : \varphi \in C^\infty\text{ e } \sup_{x\in\mathbb{R}}\Big|x^h\frac{d^k\varphi}{dx^k}\Big|<+\infty,\ \forall h,k\in\mathbb{N}\Big\}\equiv\mathcal{S},
+    \]
+    (si dicono funzioni $C^\infty$ a \textit{decrescenza rapida}), con la seguente nozione di convergenza:
+    \begin{equation*}
+        \varphi_n\xrightarrow[]{\mathcal{S}}0,
+    \end{equation*}
+    Cioè, $\forall n,k \in \mathbb{N},\ x^h\frac{d^k\varphi_n}{dx^k}\xrightarrow[n\to\infty]{}0$ unifromemente in $\mathbb{R}$. \\
+    L'insieme delle distribuzioni su $\mathcal{S}$ si indica con $\mathcal{S}'$.
+    \item \textbf{Distribuzioni di Schwartz:}
+    L'insieme delle funzioni test è
+    \[
+        \four = C_0^\infty=\{\varphi \in C^\infty\text{ e a supporto compatto}\} \equiv \mathcal{D},
+    \]
+    ($\text{Supp} (\varphi) \equiv$ il più piccolo insieme chiuso $K$ al di fuori del quale $\varphi$ è nulla), con la seguente nozione di convergenza:
+    \begin{equation*}
+        \varphi_n\xrightarrow[]{\mathcal{D}}0,
+    \end{equation*}
+    che significa che esiste un compatto $K$ tale che 
+    \begin{gather*}
+        K_n\defeq\text{Supp}\,\varphi_n\subset K,\ \forall n\text{ tale che}\\
+        \forall n \in \mathbb{N},\ \frac{d^k\varphi_k}{dx^k}\xrightarrow[n\to\infty]{}0\text{ uniformemente in }K.
+    \end{gather*}
+    L'insieme delle distrubuzioni su $\mathcal{D}$ si indica con $\mathcal{D}'$.
+\end{enumerate}
+
+
+
+\subsubsection*{Derivata e trasformata delle distribuzioni (temperate)}
+    \begin{itemize}
+    \item Derivata in generale
+    \[
+         \langle \D^kT,\varphi \rangle \equiv (-1)^k \langle T,\D^k\varphi \rangle,\ \forall \varphi \in \four;
+    \]
+    \item  Derivata della $\Theta(x)$
+    \begin{gather*}
+        D T_{\Theta} = \delta_0, \text{ i.e. }  \D\Theta(x) = \delta(x);\\
+        \langle DT_\Theta,\, \varphi \rangle = \langle \delta_{0},\,\varphi \rangle,\ \forall \varphi \in \mathcal{S}.
+    \end{gather*}
+    \item Derivata della $\delta_{x_0}$
+    \begin{align*}
+        \langle \D^k \delta_{x_0}, \varphi \rangle &\equiv (-1)^k\langle \delta_{x_0},\varphi^{(k)}\rangle =\\
+        &=(-1)^k\varphi^{(k)}(x_0),\ \forall\varphi\in\mathcal{E}.
+    \end{align*}
+    \item Trasformata in generale
+    \begin{gather*}
+        \langle \four(T_u),\varphi\rangle\equiv\langle T_{\four(u)}, \varphi\rangle=\langle T_u,\four(\varphi)\rangle,\ \forall\varphi\in \mathcal{S};\\
+        \langle \four^{-1}(T_u),\varphi\rangle \equiv\langle T_{\four^{-1}(u)}, \varphi\rangle=\langle T_u,\four^{-1}(\varphi)\rangle,\ \forall\varphi\in \mathcal{S}.
+    \end{gather*}
+    \item Trasformata della  $\delta_{x_0}$
+    \begin{gather*}
+        \four(\delta_{x_0}) =T_{e^{i\w x_0}}, \text{ i.e. }\four(\delta(x-x_0) ) = e^{i\w x_0};\\
+        \four^{-1}(T_{e^{ib\w}}) = \delta_b, \text{ i.e. } \afour(e^{ib\w})=\delta(x-b);\\
+        \four(T_{e^{-iat}}) = 2\pi \delta_a;\\
+        \four^{-1}(\delta_a)=\frac{1}{2\pi}T_{e^{-iat}}.\\
+        \Rightarrow \four(\delta_0)=T_1.
+    \end{gather*}
+    \item Trasformata della $\pp{x}$
+        \[
+            \four({\pp{x}})=T_{i\pi\epsilon(\w)},\text{ i.e. } \four({\pp{x}})=i\pi\epsilon(\w).
+        \]
+    \item Trasformata della derivata in generale
+        \begin{gather*}
+            \four(\D^kT)=(-i\w)^k\four(T);\\
+            \four^{-1}(\D^k\Tilde{T})=(ix)^k\four^{-1}(\Tilde{T}).
+        \end{gather*}
+    \item Derivata della trasformata in generale
+        \begin{gather*}
+            \D^k(\four(T))=\four((ix)^kT);\\
+            \D^k(\four^{-1}(\Tilde{T}))=\four^{-1}((-i\w)^k\Tilde{T}).
+        \end{gather*}
+    \item Trasformata della derivata della $\delta_{x_0}$
+        \begin{gather*}
+            \four(\delta^{(k)}(x))=(-i\w)^k;\\
+            \four^{-1}(\w^k)=i^k\delta^{(k)}(x).
+        \end{gather*}
+    \item Trasformata di $x^k$
+        \begin{gather*}
+            \four(x^k)=(-i)^k2\pi\delta^{(k)}(\w);\\
+            \four^{-1}(\delta^{(k)}(\w))=\frac{1}{2\pi}(ix)^k.
+        \end{gather*}
+    \item Trasformata di $\delta_\pm$
+        \begin{gather*}
+            \four(\delta_{\pm}(x))=\frac{1}{2}(1\pm\epsilon(\w))=\Theta(\pm\w);\\
+            \four^{-1}(\Theta(\pm\w))=\delta_\pm(x).
+        \end{gather*}
+    \item Trasformata di $\varepsilon(x)$
+        \begin{gather*}
+            \four(\epsilon(x))=2i\pp{\w}.\\
+            \afour(\pp{\w})=\frac{1}{2\pi}i\pi\epsilon(-x)=\frac{1}{2i}\epsilon(x).
+        \end{gather*}
+    \item Trasformata di $\Theta(\pm x)$
+        \begin{gather*}
+            \four(\Theta(\pm x))=\pm\pp{\w}+\pi\delta(\w)\defeq2\pi\delta_\mp(\w).
+            \four(\Theta(x)e^{-iax})=i\pp{\w-a}+\pi\delta(\w-a);\\
+            \four(\Theta(x-a))=e^{i\w a}\four(\Theta(x))=e^{i\w a}(\pp{\w}+\pi\delta(\w)).
+        \end{gather*}
+    \end{itemize}    

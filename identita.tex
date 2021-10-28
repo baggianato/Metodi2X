@@ -1,0 +1,135 @@
+\subsection*{Identità e relazioni}
+\begin{gather*}
+    ||z_1|-|z_2|| \le |z_1+z_2| \le |z_1|+|z_2| \\
+    ||z_1|-|z_2|| \le |z_1-z_2| \le |z_1|+|z_2| \\
+\end{gather*}
+
+\begin{gather*}
+    \cos z = \frac{e^{iz}+e^{-iz}}{2}; \
+    \sin z  = \frac{e^{iz}-e^{-iz}}{2i};\\
+    e^{\pm iz} = \cos z \pm i \sin z;\\
+    \cosh{z} = \frac{e^{z}+e^{-z}}{2}; \
+    \sinh{z}  = \frac{e^{z}-e^{-z}}{2}
+\end{gather*}
+\begin{definition}[Delta di Dirac]
+    con centro nel punto $x_0$, indicata con $\delta_{x_0}$, oppure con $\delta(x-x_0)$, è una distribuzione così definita:
+    \[
+        \langle\delta_{x_0},\,\varphi\rangle\defeq\varphi(x_0),\ \forall\varphi\in\mathcal{F}.
+    \]
+    con notazione impropria, spesso si scrive
+    \[
+        \int_{-\infty}^{+\infty}\delta(x-x_0)\varphi(x)\,dx=\varphi(x_0).
+    \]
+\end{definition}
+\begin{definition}[Parte principale $\mathcal{P}\frac{1}{x}$ (distribuzione)]
+\begin{align*}
+    \langle \pp{x}, \varphi \rangle &\equiv \mathcal{P}\int_{-\infty}^{+\infty}\frac{\varphi(x)}{x}dx=\\
+    &=\lim_{\substack{R\to+\infty\\\epsilon\to0^+}}\Big\{\int_{-R}^{-\epsilon}+\int_{\epsilon}^{R}\Big\}\frac{\varphi(x)}{x}dx, \ \forall\varphi \in \mathcal{S}.
+\end{align*}
+\end{definition}
+\begin{definition}[Funzione segno] Indicata anche con $\operatorname{sgn}(\w)$, si definisce
+\[
+    \varepsilon(\w) = 
+    \begin{cases}
+        +1\text{ per }\w>0;\\
+        -1\text{ per }\w<0.
+    \end{cases}
+\]
+\end{definition}
+\begin{definition}[Distribuzioni $\delta_+$ e $\delta_-$]
+\[
+    \delta_\pm(x)\defeq\frac{1}{2}\delta(x)\pm\frac{1}{2\pi i}\pp{x}
+\]
+\end{definition}
+\begin{gather*}
+     \Theta(x) = \frac{1+\epsilon(x)}{2}\iff    \epsilon(x)=2\Theta(x)-1;\\
+    \Theta(\w)+\Theta(-\w)=1\text{ e }\Theta(\w)-\Theta(-\w)=\epsilon(\w);\\
+    \epsilon(-x) = -\epsilon(x);\\
+    \lim_{\epsilon\to0^+}\frac{1}{x\pm\epsilon}=\pp{x}\mp i\pi\delta(x).
+\end{gather*}
+
+\begin{equation*}
+    (\sqrt[n]{z})_k=\overline{\sqrt[n]{z}}e^{i(\frac{\arg (z)}{n}+\frac{2\pi k}{n})},\ k=0,\dots,n-1;\\
+\end{equation*}
+
+\begin{equation*}
+    (\log (z))_k = \log|z|+i\arg(z) + i2\pi k, \ k\in\mathbf{Z};\\
+\end{equation*}
+
+\begin{align*}
+    z^\alpha &= e^{\alpha\log|z|}e^{i\alpha\arg z}e^{i\alpha 2\pi k}=\\ 
+    &= |z|^\alpha e^{i\alpha 2\pi k}, \quad k\in\mathbf{Z}, \ \alpha\in\mathbf{C}.
+\end{align*}
+
+\begin{equation*}
+    \frac{1}{(z-a)(z+a)}=\frac{1}{2a}\Big[ \frac{1}{z-a}-\frac{1}{z+a}\Big]
+\end{equation*}
+
+\begin{equation*}
+    \frac{1}{z(z+a)}=\frac{1}{a}\Big[ \frac{1}{z}-\frac{1}{z+a}\Big]
+\end{equation*}
+
+\subsubsection*{Serie note}
+\[
+    \sum_{n=0}^{\infty}\frac{1}{n!}\frac{1}{z^n} = e^{1/z}, \ |z|>0 \ (z\neq0).
+\]
+\[
+    \sum_{n=0}^{\infty}\left(\frac{z}{a}\right)^n + \sum_{n=0}^{\infty}\left(\frac{b}{z}\right)^n = \frac{a}{a-z} + \frac{z}{z-b} \text{ per } |b|<|z|<|a|.
+\]
+\textbf{Serie geometrica}
+\[
+\sum_{n=0}^{\infty}x^n=
+\begin{cases}
+  \frac{1}{1-x},\text{ per }|x|<1;\\
+  \text{divergente},\text{ per }x\ge1;\\
+  \text{indeterminata},\text{ per }x\le-1.
+\end{cases}
+\]
+equivalentemente
+\[
+    \sum_{n=0}^{\infty} z^n = \frac{1}{1-z},\ r = 1.
+\]
+La sua derivata
+\[
+    \sum_{n=1}^{\infty} nz^n = \frac{d}{dz}\left(\frac{1}{1-z}\right) = \frac{1}{(1-z)^2},\ r = 1.
+\]
+\[
+    \sum_{n=0}^{\infty}(-1)^n x^n=  \frac{1}{1+x},\text{ per }|x|<1.
+\]
+Caso interessante:
+\[
+    \sum_{n=0}^{\infty} \frac{-1}{z^{n+1}}=\frac{1}{1-z}, \text{ per } |z|>1.
+\]
+\textbf{Serie esponenziale}
+\[
+    \sum_{n=0}^{\infty}\frac{z^n}{n!}=e^z, \ r=\infty.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}
+    $f$ derivabile in senso complesso nel punto $z_0=x_0+iy_0 \Rightarrow f$ derivabile in senso reale, cioé $\exists\ f_x$ e $f_y$ nel punto $x_0$ e sono legate dalle condizioni di Cauchy Reimann $f_x+if_y=0$. 
+\end{theorem}
+
+\begin{theorem}
+    $f(z)$ analitica in $D \subset \mathbf{C} \Leftrightarrow f(x,y)$ differenziabile in senso reale in $D$ con $f_x$ e $f_y$ continue e tali che $f_x+if_y=0$.
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Condizioni di C.R.}
+Coordinate cartesiane:
+\[
+   f_x +if_y=0\xRightarrow[]{f=u+iv}
+  \begin{cases}
+    u_x = v_y;y
+    \\
+    u_y = -v_x. 
+  \end{cases}
+\]
+Coordinate polari:
+\[
+    f_{\rho} + \frac{i}{\rho} f_{\varphi}=0\xRightarrow[]{f=u+iv} 
+    \begin{cases}
+      u_{\rho}=\frac{1}{\rho}v_{\rho}; \\
+      \frac{1}{\rho}u_\phi =-v_\rho.
+    \end{cases}
+\]
+
